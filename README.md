@@ -4,11 +4,24 @@
   <img src="assets/banner.png" width="750" alt="banner_image" style="border-radius: 10px;"> 
 </div>
 
+
+<div align="center">
+
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x%20%7C%20Keras%203-FF6F00?logo=tensorflow&logoColor=white)](https://tensorflow.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-FF6F00?logo=tensorflow&logoColor=white)](https://tensorflow.org/)
+[![Keras](https://img.shields.io/badge/Keras-3-D00000?logo=keras&logoColor=white)](https://keras.io/)
 [![uv](https://img.shields.io/badge/managed%20by-uv-DE5FE9?logo=astral&logoColor=white)](https://github.com/astral-sh/uv)
-[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](KeyFacialPointsDetection.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohd-faizy/18P_AI-Facial-Keypoints-Detection/blob/main/KeyFacialPointsDetection.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+[![GitHub repo size](https://img.shields.io/github/repo-size/mohd-faizy/18P_AI-Facial-Keypoints-Detection?color=blue&logo=github)](https://github.com/mohd-faizy/18P_AI-Facial-Keypoints-Detection)
+[![GitHub stars](https://img.shields.io/github/stars/mohd-faizy/18P_AI-Facial-Keypoints-Detection?color=yellow&logo=github)](https://github.com/mohd-faizy/18P_AI-Facial-Keypoints-Detection/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/mohd-faizy/18P_AI-Facial-Keypoints-Detection?color=orange&logo=github)](https://github.com/mohd-faizy/18P_AI-Facial-Keypoints-Detection/network/members)
+[![GitHub last commit](https://img.shields.io/github/last-commit/mohd-faizy/18P_AI-Facial-Keypoints-Detection?logo=git)](https://github.com/mohd-faizy/18P_AI-Facial-Keypoints-Detection/commits/main)
+
+</div>
+
 
 An end-to-end Computer Vision and Deep Learning project that detects **15 facial keypoints (30 coordinates)** from 96×96 grayscale face images using a custom **Deep Residual Neural Network (ResNet)** architecture in TensorFlow / Keras.
 
@@ -65,7 +78,7 @@ The dataset consists of **2,140 face images** with 30 landmark coordinates:
 Some facial landmarks (such as lip points or eyebrow corners) are not visible across all images due to facial occlusions, head poses, or lighting conditions.
 
 <div align="center">
-  <img src="assets/Plots/01_missing_values_analysis.png" width="750" alt="Missing Values Analysis" style="border-radius: 10px;">
+  <img src="assets/plots/01_missing_values_analysis.png" width="750" alt="Missing Values Analysis" style="border-radius: 10px;">
 </div>
 
 <br>
@@ -78,7 +91,7 @@ Some facial landmarks (such as lip points or eyebrow corners) are not visible ac
 Analyzing the coordinate distributions confirms anatomical symmetry between left and right facial features (e.g. eye centers positioned predictably around $x \approx 35$ and $x \approx 65$).
 
 <div align="center">
-  <img src="assets/Plots/02_keypoint_x_distribution.png" width="750" alt="Keypoint X-Coordinates Distribution" style="border-radius: 10px;">
+  <img src="assets/plots/02_keypoint_x_distribution.png" width="750" alt="Keypoint X-Coordinates Distribution" style="border-radius: 10px;">
 </div>
 
 ---
@@ -90,8 +103,8 @@ Each face image is reconstructed from 9,216 pixel values ($96 \times 96$) and ov
 ### Single Sample Landmark Overlay
 
 <div align="center">
-  <img src="assets/Plots/03_sample_face_keypoints.png" width="365" alt="Sample Face with Keypoints" style="border-radius: 10px; margin: 4px;">
-  <img src="assets/Plots/04_face_keypoints_detailed.png" width="365" alt="Detailed Face Keypoints" style="border-radius: 10px; margin: 4px;">
+  <img src="assets/plots/03_sample_face_keypoints.png" width="365" alt="Sample Face with Keypoints" style="border-radius: 10px; margin: 4px;">
+  <img src="assets/plots/04_face_keypoints_detailed.png" width="365" alt="Detailed Face Keypoints" style="border-radius: 10px; margin: 4px;">
 </div>
 
 ---
@@ -100,7 +113,7 @@ Each face image is reconstructed from 9,216 pixel values ($96 \times 96$) and ov
 A sample grid illustrating various facial expressions, lighting variations, and facial shapes present in the dataset:
 
 <div align="center">
-  <img src="assets/Plots/05_sample_faces_grid_16.png" width="750" alt="Sample Faces Grid" style="border-radius: 10px;">
+  <img src="assets/plots/05_sample_faces_grid_16.png" width="750" alt="Sample Faces Grid" style="border-radius: 10px;">
 </div>
 
 ---
@@ -113,7 +126,7 @@ To prevent overfitting and double the effective dataset size, several image tran
 Flipping images horizontally ($y$-axis reflection) requires mirroring all $x$-coordinates ($x_{new} = 96 - x_{orig}$):
 
 <div align="center">
-  <img src="assets/Plots/09_horizontal_flip_comparison.png" width="750" alt="Horizontal Flip Comparison" style="border-radius: 10px;">
+  <img src="assets/plots/09_horizontal_flip_comparison.png" width="750" alt="Horizontal Flip Comparison" style="border-radius: 10px;">
 </div>
 
 ---
@@ -122,7 +135,7 @@ Flipping images horizontally ($y$-axis reflection) requires mirroring all $x$-co
 Random brightness scaling introduces robustness against real-world lighting shifts without altering facial landmark coordinates:
 
 <div align="center">
-  <img src="assets/Plots/10_brightness_augmentation_comparison.png" width="750" alt="Brightness Augmentation Comparison" style="border-radius: 10px;">
+  <img src="assets/plots/10_brightness_augmentation_comparison.png" width="750" alt="Brightness Augmentation Comparison" style="border-radius: 10px;">
 </div>
 
 ---
@@ -131,7 +144,7 @@ Random brightness scaling introduces robustness against real-world lighting shif
 Vertical flipping along the horizontal axis requires adjusting $y$-coordinates ($y_{new} = 96 - y_{orig}$) while keeping $x$-coordinates fixed:
 
 <div align="center">
-  <img src="assets/Plots/11_vertical_flip_comparison.png" width="750" alt="Vertical Flip Comparison" style="border-radius: 10px;">
+  <img src="assets/plots/11_vertical_flip_comparison.png" width="750" alt="Vertical Flip Comparison" style="border-radius: 10px;">
 </div>
 
 ---
@@ -141,7 +154,7 @@ Vertical flipping along the horizontal axis requires adjusting $y$-coordinates (
 The combined original and augmented datasets are normalized to $[0, 1]$ and split into **90% Training** and **10% Testing** sets:
 
 <div align="center">
-  <img src="assets/Plots/12_train_test_split_visualization.png" width="750" alt="Train vs Test Split Visualization" style="border-radius: 10px;">
+  <img src="assets/plots/12_train_test_split_visualization.png" width="750" alt="Train vs Test Split Visualization" style="border-radius: 10px;">
 </div>
 
 <br>
@@ -149,7 +162,7 @@ The combined original and augmented datasets are normalized to $[0, 1]$ and spli
 ### Augmented Dataset Overview (64 Random Samples)
 
 <div align="center">
-  <img src="assets/Plots/13_augmented_data_grid_64.png" width="750" alt="Augmented Samples Grid" style="border-radius: 10px;">
+  <img src="assets/plots/13_augmented_data_grid_64.png" width="750" alt="Augmented Samples Grid" style="border-radius: 10px;">
 </div>
 
 ---
@@ -174,7 +187,7 @@ The architecture is built upon the **ResNet** paradigm, combining:
 The model was compiled with the Adam optimizer (`learning_rate=0.001`) and trained for **100 epochs** using `ModelCheckpoint` saved in the modern `.keras` format.
 
 <div align="center">
-  <img src="assets/Plots/14_training_validation_loss_accuracy.png" width="750" alt="Training and Validation Curves" style="border-radius: 10px;">
+  <img src="assets/plots/14_training_validation_loss_accuracy.png" width="750" alt="Training and Validation Curves" style="border-radius: 10px;">
 </div>
 
 <br>
@@ -189,7 +202,7 @@ The model was compiled with the Adam optimizer (`learning_rate=0.001`) and train
 Predictions on 16 test images demonstrate accurate localization of eye centers, nose tips, and mouth corners:
 
 <div align="center">
-  <img src="assets/Plots/15_test_predictions_grid_16.png" width="750" alt="Test Predictions Grid" style="border-radius: 10px;">
+  <img src="assets/plots/15_test_predictions_grid_16.png" width="750" alt="Test Predictions Grid" style="border-radius: 10px;">
 </div>
 
 ---
@@ -198,7 +211,7 @@ Predictions on 16 test images demonstrate accurate localization of eye centers, 
 A direct overlay comparing **Actual Landmarks (Red)** against **Predicted Landmarks (Green)** on test samples:
 
 <div align="center">
-  <img src="assets/Plots/16_predicted_vs_actual_comparison.png" width="750" alt="Predicted vs Actual Keypoints Comparison" style="border-radius: 10px;">
+  <img src="assets/plots/16_predicted_vs_actual_comparison.png" width="750" alt="Predicted vs Actual Keypoints Comparison" style="border-radius: 10px;">
 </div>
 
 ---
@@ -208,7 +221,7 @@ A direct overlay comparing **Actual Landmarks (Red)** against **Predicted Landma
 Evaluating the Root Mean Squared Error (RMSE) across test samples confirms consistent precision with minimal outlier deviation:
 
 <div align="center">
-  <img src="assets/Plots/17_prediction_error_distribution.png" width="750" alt="Prediction Error Distribution" style="border-radius: 10px;">
+  <img src="assets/plots/17_prediction_error_distribution.png" width="750" alt="Prediction Error Distribution" style="border-radius: 10px;">
 </div>
 
 ---
@@ -218,13 +231,13 @@ Evaluating the Root Mean Squared Error (RMSE) across test samples confirms consi
 | Challenge | Topic | Output Visualization |
 |---|---|---|
 | **#1** | Summary statistics for `right_eye_center_x` | Computed mean ($34.50$), min, and max |
-| **#2** | 64 random faces in an 8×8 grid | [View Plot](assets/Plots/06_faces_grid_64_challenge2.png) |
-| **#3** | Vertical flip augmentation with $y$-inversion | [View Plot](assets/Plots/11_vertical_flip_comparison.png) |
-| **#4** | Test size sensitivity & augmented visualization | [View Plot](assets/Plots/13_augmented_data_grid_64.png) |
+| **#2** | 64 random faces in an 8×8 grid | [View Plot](assets/plots/06_faces_grid_64_challenge2.png) |
+| **#3** | Vertical flip augmentation with $y$-inversion | [View Plot](assets/plots/11_vertical_flip_comparison.png) |
+| **#4** | Test size sensitivity & augmented visualization | [View Plot](assets/plots/13_augmented_data_grid_64.png) |
 | **#5** | Architecture ablation (MaxPooling & Stage 4) | Full model summary with Stage 4 added |
 
 <div align="center">
-  <img src="assets/Plots/06_faces_grid_64_challenge2.png" width="750" alt="64 Random Faces Grid" style="border-radius: 10px;">
+  <img src="assets/plots/06_faces_grid_64_challenge2.png" width="750" alt="64 Random Faces Grid" style="border-radius: 10px;">
 </div>
 
 ---
@@ -235,8 +248,8 @@ This project is optimized for [**uv**](https://github.com/astral-sh/uv), an extr
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/Emotion-AI-Facial-Key-points-Detection.git
-cd "Emotion AI Facial Key points Detection"
+git clone https://github.com/mohd-faizy/18P_AI-Facial-Keypoints-Detection.git
+cd 18P_AI-Facial-Keypoints-Detection
 ```
 
 ### 2. Set Up Virtual Environment with `uv`
@@ -272,6 +285,9 @@ jupyter notebook KeyFacialPointsDetection.ipynb
 ```
 
 > **Running on Google Colab**:
+>
+> [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohd-faizy/18P_AI-Facial-Keypoints-Detection/blob/main/KeyFacialPointsDetection.ipynb)
+>
 > Simply upload `KeyFacialPointsDetection.ipynb` and `KeyFacialPoints.csv` to Google Colab. The notebook dynamically checks and supports Colab file paths (`/content/KeyFacialPoints.csv` and `/content/weights.keras`) automatically.
 
 
