@@ -1,0 +1,74 @@
+# =====================================
+# Byte-compiled / optimized / DLL files
+# =====================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =====================================
+# Virtual Environments
+# =====================================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# =====================================
+# Jupyter Notebooks
+# =====================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# =====================================
+# Model Weights & Large Checkpoints
+# Note: GitHub has a 100MB file limit.
+# weights.hdf5 is ~216MB, so model weights
+# should be tracked with Git LFS or ignored.
+# =====================================
+*.hdf5
+*.h5
+*.keras
+*.ckpt
+*.pt
+*.pth
+*.tflite
+*.onnx
+weights.hdf5
+data/*.hdf5
+data/weights.hdf5
+
+# =====================================
+# Large Datasets
+# Note: KeyFacialPoints.csv is ~72MB.
+# =====================================
+*.csv
+data/*.csv
+
+# =====================================
+# Training & Profiling Logs
+# =====================================
+logs/
+runs/
+*.log
+tensorboard/
+
+# =====================================
+# IDEs and Text Editors
+# =====================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# =====================================
+# OS-generated files
+# =====================================
+.DS_Store
+Thumbs.db
+desktop.ini

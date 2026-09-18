@@ -1,0 +1,20 @@
+# Deep Learning & Neural Networks
+tensorflow
+keras
+
+# Machine Learning & Data Processing
+numpy
+pandas
+scikit-learn
+
+# Visualization & Image Processing
+matplotlib
+Pillow
+
+# Model Storage & Checkpoints
+h5py
+
+# Jupyter Notebook Environment
+ipykernel
+ipython
+notebook
